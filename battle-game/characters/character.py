@@ -5,7 +5,7 @@ class Character:
         self.weapon = weapon
         self.armor = armor
     def attack(self, other):
-        self.hp = self.hp + self.armor.defense - other.weapon.damage
-        return self.hp
-        
+        other.hp = other.hp + other.armor.defense - self.weapon.damage
+        return other.hp
+
         
