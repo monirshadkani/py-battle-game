@@ -1,5 +1,7 @@
+from gears.weapon import Weapon
+from gears.armor import Armor
 class Character:
-    def __init__ (self, name:str, hp:float, weapon, armor):
+    def __init__ (self, name:str, hp:float, weapon:Weapon, armor:Armor):
         self.name = name
         self.hp = hp
         self.weapon = weapon
