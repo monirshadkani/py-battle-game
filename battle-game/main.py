@@ -1,26 +1,28 @@
 from gears.weapon import Weapon
 from gears.armor import Armor
-from characters.character import Character
+from gears.spell import Spell
+from characters.wizard import Wizard
+from characters.barbarian import Barbarian
+from battleground.arena import Arena
 
-axe = Weapon('axe', 20)
-staff = Weapon('staff', 15)
+axe = Weapon('axe', 13)
+staff = Weapon('staff', 10)
+magic_orb = Spell('Magic Orb', 12, 10)
 
 iron_armor = Armor('iron_armor', 10)
 leather_armor = Armor('leather_armor', 8)
 
-john = Character('john', 200, axe, leather_armor)
-jane = Character('jane', 180, staff, iron_armor)
+john = Wizard('john', 200, staff, leather_armor, magic_orb, 2 )
+jane = Barbarian('jane', 180, axe, iron_armor)
+#jane hp = 180+10 = 190  john hp = 200 + 8 = 2008
+#jane damage = 13 john atack damage = 10 john spell damage = 12
 
-john.attack(jane)
-print(john.name, john.hp, "HP")
-print(jane.name, jane.hp, "HP")
-input("------------------")
-jane.attack(john)
-print("Results: ")
-print(john.name, john.hp, "HP")
-print(jane.name, jane.hp, "HP")
-input("------------------")
+first_fight = Arena(john, jane)
 
+first_fight.fight()
 
-# print(axe.name)
-# print(leather_armor.name)
+# john.attack(jane)
+# input("------------------")
+# jane.attack(john)
+
+# input("------------------")
